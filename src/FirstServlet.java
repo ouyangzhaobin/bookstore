@@ -16,8 +16,7 @@ public class FirstServlet extends HttpServlet {
         String sname = request.getParameter("sname");
         Student student = new Student(sno,sname);
         request.setAttribute("student", student);
-        RequestDispatcher rd = request.getRequestDispatcher("/SecondServlet");
-        rd.forward(request, response);
+
     }
 }
 
