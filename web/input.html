@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>input</title>
+</head>
+<script>
+    //提交
+    function submitFrom()
+    {
+        //验证数据
+        if(!myForm.sno.value)
+        {
+            alert("请输入学号！");
+            myForm.sno.focus();
+            return;
+        }
+
+        if(!myForm.sname.value)
+        {
+            alert("请输入姓名！");
+            myForm.sname.focus();
+            return;
+        }
+        //提交表单
+        myForm.method = 'POST';
+        // myForm.action = ".html";
+        myForm.submit();
+    }
+
+    //重置
+    function resetFrom()
+    {
+        //重置表单
+        document.getElementsByName("myForm")[0].reset();
+    }
+</script>
+<body>
+<div style="width:100%;text-align:center">
+    <form action="FirstServlet" method="post" name="myForm">
+        学号：<input name="sno"><br>
+        <br>
+        姓名：<input name="sname"><br>
+        <br>
+        <input type="submit" value="提交"  name="submit"  onclick="submitFrom()"/>
+        <input type="reset" value="重置"  name="reset" onclick="resetFrom()" />
+    </form>
+</div>
+</body>
+</html>
